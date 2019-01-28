@@ -26,7 +26,7 @@
             <template  v-if=" !user ">
               <!-- router-link类似a标签，点击可以跳转路由， /manageMain是router/index.js中定义的路由路径  -->
               <router-link to="/login">登录</router-link>
-              &nbsp;<a href="/news/user/public/register.jsp">注册</a>
+              &nbsp;<a :href="base_url+'/user/public/register.jsp'">注册</a>
             </template >
             <template  v-else>
               {{user.name}}&nbsp;
@@ -52,7 +52,8 @@
 
     data () {  //组件数据
       return {
-        user: {}
+        user: {},
+        base_url:this.$http.defaults.baseURL
       }
     },
     created:function(){  //钩子函数
