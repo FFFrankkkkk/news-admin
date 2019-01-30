@@ -7,28 +7,28 @@
                 <!-- @click绑定鼠标点击事件  -->
                 <li @click="goFunc(1)">显示个人信息</li>
                 <li @click="goFunc(2)">修改个人信息</li>
-                <li @click="goFunc(3)">修改密码</li>
+              <li ><a :href="base_url+'/user/manage/changePassword.jsp'" target="_blank">修改密码</a></li>
             <template  v-if="  this.user.type=='manager' ">
                 <br>
-                <li @click="goFunc(4)">浏览用户</li>
-                <li @click="goFunc(5)">审查用户</li>
-                <li @click="goFunc(6)">查询用户</li>
-                <li @click="goFunc(7)">删除用户</li>
-                <li @click="goFunc(8)">批量添加用户</li>
-                <li @click="goFunc(9)">管理新闻</li>
+                <li><a :href="base_url+'/manager/userShow.jsp'" target="_blank">浏览用户</a></li>
+                <li ><a :href="base_url+'/servlet/UserServlet?type1=check&page=1&pageSize=2'" target="_blank">审查用户</a></li>
+                <li><a :href="base_url+'/manager/userSearch.jsp'" target="_blank">查询用户</a></li>
+                <li><a :href="base_url+'/servlet/UserServlet?type1=delete&page=1&pageSize=2'" target="_blank">删除用户</a></li>
+                <li><a :href="base_url+'/manager/userBatchAdd.jsp'" target="_blank">批量添加用户</a></li>
+                <li><a :href="base_url+'/servlet/NewsServlet?type1=manageNews&page=1&pageSize=2'" target="_blank">管理新闻</a></li>
                 <br>
-                <li @click="goFunc(10)">年度新闻数</li>
-                <li @click="goFunc(11)">各年新闻数</li>
-                <li @click="goFunc(12)">各年评论前十</li>
-                <li @click="goFunc(13)">生成静态html</li>
+              <li><a :href="base_url+'/statistic/articleNumberByMonthInAYear.jsp'" target="_blank">年度新闻数</a></li>
+              <li><a :href="base_url+'/servlet/StatisticServlet?type=articleNumberByMonthInAYearEveryYear'" target="_blank">各年新闻数</a></li>
+              <li><a :href="base_url+'/servlet/StatisticServlet?type=firstTenCommentNumberAYearEveryYear'" target="_blank">各年评论前十</a></li>
+              <li><a :href="base_url+'/servlet/AutoGeneratorServlet?type=newsHtml'" target="_blank">生成静态html</a></li>
                 <br>
-                <li @click="goFunc(14)">数据库备份</li>
-                <li @click="goFunc(15)">数据库还原</li>
+              <li><a :href="base_url+'/manager/databaseBackup.jsp'" target="_blank">数据库备份</a></li>
+              <li><a :href="base_url+'/servlet/DatabaseServlet?type=restoreFirst'" target="_blank">数据库还原</a></li>
             </template >
             <template  v-if=" this.user.type=='newsAuthor' ">
                 <br>
-                <li > <a :href="base_url+'/news/manage/addNews.jsp'" target="_blank">添加新闻</a></li>
-                <li @click="goFunc(17)">管理新闻</li>
+                <li > <a :href="base_url+'/manage/addNews.jsp'" target="_blank">添加新闻</a></li>
+              <li ><a :href="base_url+'/servlet/NewsServlet?type1=manageNews&page=1&pageSize=2'" target="_blank">管理新闻</a></li>
             </template >
             </ul>
         </div>
