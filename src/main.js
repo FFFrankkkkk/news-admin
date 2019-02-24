@@ -6,7 +6,8 @@ import router from './router'
 import axios from 'axios'  //引入axios  异步请求
 import './css/1.css' //引入css
 // Vue.config.productionTip = false
-
+// import './assets/css/bootstrap.min.css'
+// import './assets/js/bootstrap.min'
 import global_ from './components/base.vue'
 import store from './store'//引入store
 Vue.prototype.GLOBAL = global_;
